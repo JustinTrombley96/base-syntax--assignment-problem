@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserOutput from './components/UserOutput';
+import UserInput from './components/UserInput';
 
 class App extends Component {
 	state = {
@@ -16,6 +17,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className='App'>
+				<UserInput />
 				<UserOutput changed={this.switchUsernameNameHandler} />
 			</div>
 		);
