@@ -5,20 +5,34 @@ import UserInput from './components/UserInput';
 
 class App extends Component {
 	state = {
-		profile : [ { username: 'PoetrySkeleton', age: 20, class: 'Witch' } ],
+		username    : 'MayaZarZar',
+		class       : 'Witch',
+		newUsername : '',
 	};
 
-	switchUsernameNameHandler = newUsername => {
-		this.setState({
-			profile : [ { username: newUsername, age: 20, class: 'Witch' } ],
-		});
+	usernameChangedHandler = event => {
+		this.setState({ newUsername: event.target.value });
 	};
-
 	render() {
 		return (
 			<div className='App'>
-				<UserInput />
-				<UserOutput changed={this.switchUsernameNameHandler} />
+				<UserInput changed={this.usernameChangedHandler} />
+				<UserOutput
+					username={this.state.username}
+					class={this.state.class}
+					newUsername={this.state.newUsername}
+				/>
+				<UserOutput
+					username={this.state.username}
+					class={this.state.class}
+					newUsername={this.state.newUsername}
+				/>
+				<UserOutput
+					username={this.state.username}
+					class={this.state.class}
+					newUsername={this.state.newUsername}
+				/>
+				<UserOutput username='JimmyDean' />
 			</div>
 		);
 	}
